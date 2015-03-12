@@ -1,0 +1,1592 @@
+<template name="freegiving">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Free Giving</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="sportsequipment">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Sports Equipment</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                      <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+               
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="dormsupplies">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                  <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Dorm Supplies</p>
+                      {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                      <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+            
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="men">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Men's Apparel</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="women">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                   <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Women's Apparel</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                       <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="unisex">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Unisex Apparel</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="textbooks">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Textbooks</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+               
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="novels">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Novels</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="booksothers">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Other Books</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="desktop">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Desktop and Accesories</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="laptop">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Laptops, Tablets and Accesories</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="phone">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Phone and Accesories</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+  
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+
+<template name="gaming">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Gaming</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+               
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="tv">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Television and Accesories</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="cameras">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Cameras</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+       
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="headphones">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Headphones</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+   
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="electronicsothers">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+       
+            <section class="wrapper">
+
+                <div class="row">
+                    <div class="col-md-9 main-chart">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -90px; margin-bottom: 70px; padding-bottom: 20px; line-height: 90%;"> Other Electronics</p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -90px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        
+                        <div class="row mtbox">
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+   
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+
+
+
+
+
+
+
+                
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>

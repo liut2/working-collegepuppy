@@ -1,0 +1,419 @@
+<template name="myposteditems">
+    
+
+    <section id="container">
+        
+        
+        <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT 
+
+      *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+
+        
+            
+            
+            
+            <section class="wrapper">
+                <div style="margin-top: -30px;">
+                <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: 50px; margin-bottom: 0px; line-height: 90%;">My Posted <b>Items</b></p>
+                    <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: 20px; margin-bottom: 20px; line-height: 100%;">Items that were uploaded by you will be on display here. You can render them <br>sold out, or change their prices.</p></div>
+                
+                <div class="row" style="margin-top: -60px;">
+                    <div class="col-lg-12 main-chart">
+                       <!-- the me section goes here-->
+                        <div class="row mtbox">
+                         {{#each productList}}
+                            {{>myProduct}}
+                        
+                        {{/each}}
+                        </div>
+
+ <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->
+
+                    
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var unique_id = $.gritter.add({
+                // (string | mandatory) the heading of the notification
+                title: 'Welcome to Dashgum!',
+                // (string | mandatory) the text inside the notification
+                text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+                // (string | optional) the image to display on the left
+                image: '  ui-sam.jpg',
+                // (bool | optional) if you want it to fade out on its own or just sit there
+                sticky: true,
+                // (int | optional) the time you want it to be alive for before fading out
+                time: '',
+                // (string | optional) the class name you want to apply to that specific message
+                class_name: 'my-sticky-class'
+            });
+
+            return false;
+        });
+    </script>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({
+                html: true,
+                trigger: "manual"
+            });
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {
+                        type: "text",
+                        label: "Special event",
+                        badge: "00"
+                    },
+                    {
+                        type: "block",
+                        label: "Regular event",
+                    }
+                ]
+            });
+        });
+
+
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+
+
+    {{>firstLightbox}} {{>secondLightbox}}
+
+
+
+    
+
+    <div id="fade" class="black_overlay"></div>
+    <div id="fade" class="black_overlay"></div>
+    <div id="fade1" class="black_overlay"></div>
+
+
+</template>
+
+<template name="myProduct">
+    <!-- SERVER STATUS PANELS -->
+    <div class="col-md-4 col-sm-4 mb">
+<div class="white-panel pn">
+            <div class="white-header" style="margin-bottom: -5px; height: 50px;">
+                <h5 style="color: black; margin-top: 0px;">
+                
+                {{#if ifsold}} <span style="color: red; font-weight: bold;">SOLD OUT!</span> {{else}} <b>{{productName}}</b> {{/if}}
+                </h5>
+                </div>
+            
+            <div class="row">
+                
+                
+                
+                
+                <div class="col-sm-6 col-xs-6"></div>
+            </div>
+            <div class="centered" >
+                
+                <a href="#" align="center" class="tooltip1" data-tip="{{productDescription}}"><img id="pix" width="100%" height="375" style="margin-top: -300px; cursor: default; display:inline-block;
+    margin:auto;" src="{{c.url image.public_id format=format}}"></a>
+            </div>
+    
+    
+    
+                
+            
+            <div class="row" style="padding-bottom: 10px ! important;">
+                <div class="col-sm-4 col-xs-4 goleft" style="margin-top: 10px;">
+                    {{#if ifeditprice}}<span><input type="text" id="newprice" style="width: 80px; margin-left: 10px; color: black;" placeholder="new price"></span>{{else}}
+                    <p><i class="fa fa-usd" style="font-size: 20px;">{{productPrice}}</i> </p>
+                    {{/if}}
+                </div>
+    
+    
+    
+                <div class="col-sm-4 col-xs-4 " style="margin-top: 10px;">
+                    {{#if ifsold}}{{else}}
+                     {{#if ifeditprice}} <a class="btn btn-primary4" id="editedprice"  type="button" >confirm</a> {{else}} <a class="btn btn-primary4" id="noteditprice"  type="button" style="margin-top: 0px;">Edit price</a> {{/if}}
+                    {{/if}}
+                
+                </div>
+                
+                <div class="col-sm-4 col-xs-4 goright" style="margin-top: 10px; margin-left: -15px;">
+                    {{#if ifsold}}{{else}}
+                    <a class="btn btn-primary4" id="ifsold" type="button" >Click if sold</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- /col-md-4-->
+
+</template> 
+
+<template name="mywishlist">
+
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        
+        <!--sidebar end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+
+        
+            <section class="wrapper">
+                <div style="margin-top: -20px;">
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: 50px; margin-bottom: 20px; line-height: 90%;">My <b>Wishlist</b></p>
+                    <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: 5px; margin-bottom: -50px; line-height: 90%;">To add items to your wishlist, click the heart on the product display.</p></div>
+                <div class="row">
+                    <div class="col-lg-12 main-chart">
+                       <!-- the me section goes here-->
+                        <div class="row mtbox">
+                         {{#each productList}}
+                            {{>myWishProduct}}
+                        
+                        {{/each}}
+
+
+                        </div>
+
+ <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+
+                    <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->
+
+                    
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var unique_id = $.gritter.add({
+                // (string | mandatory) the heading of the notification
+                title: 'Welcome to Dashgum!',
+                // (string | mandatory) the text inside the notification
+                text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+                // (string | optional) the image to display on the left
+                image: '  ui-sam.jpg',
+                // (bool | optional) if you want it to fade out on its own or just sit there
+                sticky: true,
+                // (int | optional) the time you want it to be alive for before fading out
+                time: '',
+                // (string | optional) the class name you want to apply to that specific message
+                class_name: 'my-sticky-class'
+            });
+
+            return false;
+        });
+    </script>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({
+                html: true,
+                trigger: "manual"
+            });
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {
+                        type: "text",
+                        label: "Special event",
+                        badge: "00"
+                    },
+                    {
+                        type: "block",
+                        label: "Regular event",
+                    }
+                ]
+            });
+        });
+
+
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+
+
+
+    {{>firstLightbox}} {{>secondLightbox}}{{>thirdLightbox}}
+
+
+
+    
+    <div id="fade" class="black_overlay"></div>
+    <div id="fade" class="black_overlay"></div>
+    <div id="fade1" class="black_overlay"></div>
+
+
+</template>
+
+<template name="myWishProduct">
+    <!-- SERVER STATUS PANELS -->
+    <div class="col-md-4 col-sm-4 mb">
+<div class="white-panel pn">
+            <div class="white-header" style="margin-bottom: -5px; height: 50px;">
+                <h5 style="color: black; margin-top: 0px;">
+                
+                {{#if ifsold}} <span style="color: red; font-weight: bold;">SOLD OUT!</span> {{else}} <b>{{productName}}</b> {{/if}}
+                </h5>
+                </div>
+            
+            <div class="row">
+                
+                
+                
+                
+                <div class="col-sm-6 col-xs-6"></div>
+            </div>
+            <div class="centered" >
+                
+                <a href="#" align="center" class="tooltip1" data-tip="{{productDescription}}"><img id="pix" width="100%" height="375" style="margin-top: -300px; cursor: default; display:inline-block;
+    margin:auto;" src="{{c.url image.public_id format=format}}"></a>
+            </div>
+    
+    
+    
+                
+            
+            <div class="row" style="padding-bottom: 10px ! important;">
+                <div class="col-sm-4 col-xs-4 goleft" style="margin-top: 10px;">
+                    <p><i class="fa fa-usd" style="font-size: 20px;">{{productPrice}}</i> </p>
+                </div>
+    
+    
+    
+                <div class="col-sm-4 col-xs-4 " style="margin-top: 10px;">
+                {{#if ifsold}}  
+                
+                    {{else}} <a  href="javascript:void(0)" onclick="document.getElementById('light1').style.display='block';document.getElementById('fade1').style.display='block'"><button class="btn-primary2" id="mulan" style="margin-top: -3px;" >Buy</button> </a>            {{/if}}
+                </div>
+                
+                <div class="col-sm-4 col-xs-4 goright" style="margin-top: 10px; margin-left: -8px; display: inline;">
+                <a class="btn btn-primary3" id="clicktodelete" style="margin-top: -3px;" type="button" >Delete</a>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- /col-md-4-->
+
+</template> 

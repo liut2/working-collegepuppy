@@ -1,0 +1,11 @@
+{
+  "packages": {
+    "cloudinary": {},
+    "fast-render": {},
+    "jquery-ui": {},
+    "collection-hooks": {},
+    "paginated-subscription": {},
+    "pages": {},
+    "user-session": {}
+  }
+}

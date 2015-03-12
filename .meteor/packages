@@ -1,0 +1,32 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+mizzao:bootstrap-3
+jquery
+iron:router
+accounts-base
+accounts-password
+cloudinary
+matteodem:server-session
+underscore
+random
+matteodem:easy-search
+audit-argument-checks
+email
+fast-render
+jquery-ui
+mizzao:jquery-ui
+joshowens:accounts-entry
+joshowens:shareit
+cunneen:mailgun
+fastclick
+collection-hooks
+paginated-subscription
+pages
+
+user-session

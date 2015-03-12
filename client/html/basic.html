@@ -1,0 +1,24 @@
+<template name="tester">
+
+
+	
+	{{#with stuff}}
+		{{#c_upload_stream callback="save_url"}}
+				<input type="file" multiple="false" accept="image/*">
+                
+		{{/c_upload_stream}}
+	{{/with}}
+
+	{{#each c.uploading_images}}
+		<p>Uploading Image: {{percent_uploaded}}%</p>
+	{{/each}}
+
+	<!--<h3>Saved images</h3>
+	{{#each saved_images}}
+		<br>
+		<img width="200" src="{{secure_url}}">
+		
+		
+	{{/each}}
+    -->
+</template>

@@ -1,0 +1,364 @@
+<!-- start of appLayout-->
+<template name="appLayout">
+    <head>
+        <meta charset="utf-8">
+        <title>CollegePuppy</title>
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        
+    </head>
+    <body id="lalala">{{>yield}}</body>
+    
+    
+</template>
+<!-- end of appLayout-->
+
+<!-- start of check template-->
+<template name="check">
+    {{#if currentUser}} {{>dashboard}} {{else}} {{>introPage}} {{/if}}
+</template>
+<!-- end of check template-->
+
+<!-- START OF SIGNUP FORM-->
+<template name="accountcreate">
+    <form id="banner-form" method="post">
+        <div class="banner-optin vertical">
+            <h1 style="color: #fed136;"><b>Your Account Is Created !</b></h1>
+            
+             <p align="center" style="color: white; font-weight: bold;">Your account is created! Please go to your mailbox and confirm your email address before you can sign in. Note : Sometimes the email may end up in your spam folder because of your email service setting. </p>
+            <a href="/">
+                    <p style="width: 20px; display: inline; font-family: Georgia; font-size: 15px; color: #fed136; ">&nbsp;&nbsp; <span style="text-decoration: underline;">Go Back to Home</span> 
+                    </p>
+                </a>
+        </div>
+
+    </form>
+</template>
+<template name="signupForm">
+    <form id="banner-form" method="post">
+        <div class="banner-optin vertical">
+            <h1 style="color: #fed136;"><b>Sign Up Here !</b></h1>
+            <div class="form-group">
+                <input maxlength="15" name="banner-name" id="banner-name" type="text" class="form-control" style="background: black; opacity: 1; border-color: black; color: white; " required placeholder="Your Nickname">
+            </div>
+            {{#if usernameRequire}} <p align="center" style="color: red;">Username Cannot Be Empty!</p> {{/if}}
+            {{#if usernameExists}} <p align="center" style="color: red;">Username Already Exists!</p>{{/if}}
+            <div class="form-group">
+                <input name="banner-email" id="banner-email" type="email" class="form-control" style="background: black; opacity: 1; border-color: black; color: white; margin-bottom: 20px;" required placeholder=" Your E-mail">
+            </div>
+            {{#if emailRequire}} <p align="center" style="color: red;">Email Cannot Be Empty!</p> {{/if}}
+            {{#if emailExists}} <p align="center" style="color: red;">Email Already Exists!</p>{{/if}}
+            <div class="form-group">
+                <input name="banner-phone" id="banner-phone" type="password" class="form-control" style="background: black; opacity: 1; border-color: black; color: white;" placeholder=" Your Password">
+            </div>
+            
+            {{#if pswShort}}<p align="center" style="color: red;">Password should be at least 8 characters' long!</p>{{/if}}
+            <br>
+            <div class="form-group">
+                <label style="background: transparent; color: #fed136; opacity: 0.7;" for="banner-college">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;College</label>
+
+
+
+
+                &nbsp;&nbsp;&nbsp;
+                <select style="background: black; color: #fed136; opacity: 0.7; border-color: black; display: inline; height: 40px; width: 180px;" name="banner-college" class="form-control" id="banner-college" placeholder="College">
+                    <option class="Carleton College">Carleton College</option>
+                    <option class="New York University">New York University</option>
+                    <option class="Purdue University">Purdue University</option>
+                    <option class="Rice University">Rice University</option>
+                    <option class="UC Berkeley">UC Berkeley</option>
+                    <option class="UCLA">UCLA</option>
+                    <option class="UCSD">UCSD</option>
+                    <option class="UIUC">UIUC</option>
+                    <option class="UMN">UMN</option>
+                    <option class="University of Virginia">University of Virginia</option>
+                </select>
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" id="signupButton">Submit</button>
+                <a href="#">
+                    <p style="width: 20px; display: inline; font-family: Georgia; font-size: 16px; color: #fed136; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="toSignin" style="text-decoration: underline;">Or Sign in.</span> 
+                    </p>
+                </a>
+            </div>
+        </div>
+
+    </form>
+</template>
+<!-- END OF SIGNUP FORM-->
+
+<!-- START OF SIGNIN FORM-->
+<template name="signinForm">
+    <form id="banner-form" method="post">
+        <div class="banner-optin vertical">
+            <h1 style="color: #fed136;"><b>Sign In Here !</b></h1>
+
+            <div class="form-group">
+                <input name="banner-email" id="banner-email" type="email" class="form-control" style="background: black; opacity: 1; border-color: black; color: white;" required placeholder="Your E-mail">
+            </div>
+            
+            <br>
+            <div class="form-group">
+                <input name="banner-phone" id="banner-phone" type="password" class="form-control" style="background: black; opacity: 1; border-color: black; color: white;" placeholder="Your Password">
+            </div>
+
+            <br>
+            {{#if emailNotExists}} <p align="center" style="color: red;">Your credentials are not valid. Please check again.</p>{{/if}}
+            <br>
+            <p align="center" style="color: white; font-weight: bold;">Note: If it's your first time sign in, You need to make sure that you have verified the email we sent to you.</p>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Submit</button>
+                <br>
+                <br>
+                <a href="/forgot-password">
+                    <p style="width: 20px; display: inline; font-family: Georgia; font-size: 15px; color: #fed136; ">&nbsp;&nbsp; <span style="text-decoration: underline;">Forget Password?</span> 
+                    </p>
+                </a>
+                <br>
+                
+                
+                <br>
+                <a href="/" id="signupinsigninform">
+                    
+                    <p style="width: 40px; display: inline; font-family: Georgia; font-size: 15px; color: #fed136; margin-top: -10px; margin-left: 0px;">&nbsp;&nbsp; <span style="text-decoration: underline;">Not a user? Sign Up!</span> 
+                    </p>
+                </a>
+            </div>
+        </div>
+
+    </form>
+</template>
+<!-- END OF SIGNIN FORM-->
+
+
+<!-- START OF INTRO PAGE -->
+<template name="introPage">
+    <!-- Start Header -->
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="position: absolute;" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Start Logo / Text -->
+                    <img src="dog.png" alt="logo" style="display: inline;width:40px;height:40px; margin-bottom: 0px; margin-top: 10px; margin-left: -10px;">
+                    <a class="navbar-brand text-logo" href="/" style="display: inline;"><i class="icon-signout"></i><span id="set1" style="font-size: 25px; " >CollegePuppy</span></a>
+                    <!-- End Logo / Text -->
+                </div>
+                <!-- Start Navigation -->
+                {{>introNavbar}}
+                <!-- End Navigation  -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Start Banner -->
+    <div id="banner">
+        <div class="banner-inner">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Header Text -->
+                    <div class="col-md-8 col-sm-7 header-text">
+                        <h1><strong>Exchange</strong> <strong> & Share Locally</strong> </h1>
+                        <br>
+
+                        <br>
+                        <p style="font-family: Georgia; font-size: 20px;">Meet your fascinating colleagues to buy and sell used items - right on your campus. 
+                        </p>
+
+                        <br>
+
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6" >
+                                <ul class="green-arrow">
+                                    <li style="font-family: Georgia; font-size: 18px;"><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> Free Givings </i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> <b>Books</b></i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span><i>  Electronics</i>
+                                    </li>
+                                    <br>
+                                 
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6" >
+                                <ul class="green-arrow">
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span><i> Apparel</i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 20px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i>Sports Equipment</i>
+                                    </li>
+                                    <br>
+                                   <li style="font-family: Georgia; font-size: 20px;"><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> Dorm Miscellaneous</i>
+                                    </li>
+
+                                </ul>
+                                
+                                
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        
+                    </div>
+                    <!-- End Header Text -->
+
+                    <!-- Start Banner Optin Form-->
+                    <div class="col-lg-4 col-md-4 col-sm-5">
+                        {{#if ifClickSignin}}
+                            {{>signinForm}}
+                        {{else}}
+                            {{>signupForm}}
+                        {{/if}}
+                        
+                    </div>
+                    <!-- End Banner Optin Form -->
+                </div>
+                <div class="divider50"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+</template>
+<!-- END OF INTRO PAGE-->
+<template name="introNavbar">
+    <div class="navigation navbar-collapse collapse">
+                    <ul class="nav navbar-nav menu-right">
+                        <li><a href="/about">About</a>
+                        </li>
+
+                
+
+                    
+                        
+
+                        <!-- Third lightbox starts here -->
+                       
+          <!-- Third lightbox ends here -->              
+                        
+                    </ul>
+                </div>
+</template>
+
+
+
+
+<template name="introAccountPage">
+    <!-- Start Header -->
+    <header id="header">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="position: absolute;" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Start Logo / Text -->
+                    <img src="dog.png" alt="logo" style="display: inline;width:40px;height:40px; margin-bottom: 0px; margin-top: 10px; margin-left: -10px;">
+                    <a class="navbar-brand text-logo" href="#" style="display: inline;"><i class="icon-signout"></i><span id="set1" style="font-size: 25px; " >CollegePuppy</span></a>
+                    <!-- End Logo / Text -->
+                </div>
+                <!-- Start Navigation -->
+                {{>introNavbar}}
+                <!-- End Navigation  -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Start Banner -->
+    <div id="banner">
+        <div class="banner-inner">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Header Text -->
+                    <div class="col-md-8 col-sm-7 header-text">
+                        <h1><strong>Exchange</strong> <strong> & Share Locally</strong> </h1>
+                        <br>
+
+                        <br>
+                        <p style="font-family: 'Raleway', sans-serif; font-size: 20px;">Meet your fascinating colleagues to buy and sell used items - right on your campus. 
+                        </p>
+
+                        <br>
+
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6" >
+                                <ul class="green-arrow">
+                                    <li style="font-family: Georgia; font-size: 18px;"><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> Free Givings </i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> <b>Books</b></i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span><i>  Electronics</i>
+                                    </li>
+                                    <br>
+                                 
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6" >
+                                <ul class="green-arrow">
+                                    <li style="font-family: Georgia; font-size: 18px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span><i> Apparel</i>
+                                    </li>
+                                    <br>
+                                    <li style="font-family: Georgia; font-size: 20px; "><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i>Sports Equipment</i>
+                                    </li>
+                                    <br>
+                                   <li style="font-family: Georgia; font-size: 20px;"><span class="glyphicon glyphicon-ok" style="color: #fed136;"></span>  <i> Dorm Miscellaneous</i>
+                                    </li>
+
+                                </ul>
+                                
+                                
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- End Header Text -->
+
+                    <!-- Start Banner Optin Form-->
+                    <div class="col-lg-4 col-md-4 col-sm-5">
+                        {{>accountcreate}}
+                        
+                    </div>
+                    <!-- End Banner Optin Form -->
+                </div>
+                <div class="divider50"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+</template>

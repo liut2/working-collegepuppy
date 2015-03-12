@@ -1,0 +1,737 @@
+
+<template name="dashboard">
+    <section id="container">
+        <!-- 
+      TOP BAR CONTENT & NOTIFICATIONS -->
+        <!--header start-->
+        {{>topNavbar}}
+        <!--header end-->
+
+        <!-- 
+      MAIN SIDEBAR MENU-->
+        <!--sidebar start-->
+       
+        <!--sidebar end-->
+
+        <!--
+      MAIN CONTENT -->
+        <!--main content start-->
+        
+        
+            <section class="wrapper">
+
+                <div class="row">
+                    
+                    <div class="col-md-9 main-chart" >
+                        
+   
+        
+<p align="center" style="font-family: 'Raleway', sans-serif; font-size: 40px; margin-top: -80px; margin-bottom: 70px; line-height: 90%;"> {{collegeName}} <b>Marketplace</b></p>
+                        {{#if nothingyet}}
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">                    
+                            <p align="center" style="font-family: 'Raleway', sans-serif; font-size: 20px; margin-top: -60px; margin-bottom: 50px; line-height: 90%; font-style: italic; text-decoration: underline;"> Nothing here yet. Be the first one to sell something.</p>
+                           
+                      </a>
+                      {{/if}}
+                        <div class="row mtbox" style="margin-top: -30px;">
+                         
+                        
+                        {{#each productList}}
+                            {{>product}}
+                        {{/each}}
+                            
+                        </div><!-- /row mt -->
+                        <ul class="pagination" style="width: 100%; margin-left:5%;
+margin-right:50%; margin-top: -30px;">
+                            <li class="previous" style="font-size: 10px;"><a href="#">&larr;{{prevText}}</a></li>
+                            <li class="next" style="font-size: 10px;"><a href="#">&rarr;{{nextText}}</a></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                    <!-- /col-lg-9 END SECTION MIDDLE -->
+
+                    
+                    <!-- 
+      RIGHT SIDEBAR CONTENT -->
+
+                    <div class="col-md-3 ds">
+                        {{>wishlist}}
+                        
+                        {{#each wishList}}
+                            {{>wish}}
+                        {{/each}}
+                     </div>
+                    <!-- /col-lg-3 -->
+                </div>
+                <!--/row -->
+            </section>
+        
+
+        <!--main content end-->
+        <!--footer start-->
+        {{>footer}}
+        <!--footer end-->
+    </section>
+
+    
+
+
+    {{>firstLightbox}}
+    {{>secondLightbox}}
+    {{>thirdLightbox}}
+    {{>fourLightbox}}
+
+
+
+
+
+
+
+                
+                <div id="fade" class="black_overlay"></div>
+                <div id="fade" class="black_overlay"></div>
+            <div id="fade1" class="black_overlay"></div>
+
+</template>
+
+<template name="logout">
+   <li><a style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: pointer;" id="logout" href="{{pathFor 'home'}}">Logout</a></li>
+</template>
+
+<template name="firstLightbox">
+    <!-- First lightbox starts here -->
+    <div id="light" class="white_content">
+
+        <p align="center" style="margin-left: 15px; margin-bottom: 10px; font-family: 'Raleway', sans-serif; font-size: 30px;">Sell Something
+        </p>
+
+                <section id="popup">
+                    <div class="container">
+
+                        <form role="form">
+
+                            <div class="form-group">
+
+                                <input type="text" maxlength="50" class="form-control productname" Style="height: 30px; width: 220px; display: inline; margin-left: 10px; margin-top: 0px;" id="set4" placeholder="product name" >
+                                
+                            </div>
+                            
+                            
+                            <div class="form-group">
+   <p id="dollar" style="margin-left: -22px; display: inline;">$:</p><input type="text" Style="height: 30px; width: 220px; display: inline; margin-left: 20px;" class="form-control productprice" id="set5" placeholder="product price (0 if a free gift) ">
+                            </div>
+                           
+                            
+                            <div class="form-group">
+                                <textarea type="text" Style="height: 60px; width: 220px; display: inline; margin-left: 10px;" class="form-control productdescription" id="set5 " placeholder="product description (condition, size, etc.)" maxlength="200"></textarea>
+                            </div>
+                            
+
+                            <div class="form-group">
+                            <select class="productcategory" Style="height: 30px; width: 220px; display: inline; margin-left: 10px; border-radius: 5px; ">
+                                <option value="Main" disabled="disabled" selected="selected">&nbsp;Select Categories</option>
+                                <optgroup label="Books">
+                                    <option value="Textbooks">Textbooks</option>
+                                    <option value="Novels">Novels</option>
+                                    <option value="BooksOthers">Other</option>
+                                </optgroup>
+
+                                <optgroup label="Electronics">
+                                    <option value="Phones">Phones and Accessories</option>
+                                    <option value="Desktops">Desktops and Accessories</option>
+                                    <option value="Laptops">Laptops,Tablets and Accessories</option>
+                                    <option value="Games">Gaming Devices and Video Games</option>
+                                    <option value="TV">TV and Videos</option>
+                                    <option value="Cameras">Cameras</option>
+                                    <option value="Headphones">Headphones</option>
+                                    <option value="ElectronicsOthers">Other</option>
+                                </optgroup>
+
+                                <optgroup label="Apparel">
+                                    <option value="Men's">Men's</option>
+                                    <option value="Women's">Women's</option>
+                                    <option value="Unisex">Unisex</option>
+                                </optgroup>
+
+                                <optgroup label="Misc">
+                                    <option value="Dorm">Dorm Miscellaneous</option>
+                                    <option value="Sports">Sports Equipment</option>
+                                    <option value="Free">Free Giving</option>
+                                </optgroup>
+                                <br>
+                                <br>
+                                <br>
+                            </select>
+                            <br>
+                            </div>  
+                            <section>
+                                <div class="form-group">
+                                   
+                                <a href="javascript:void(0)" onclick="document.getElementById('faby').style.display = 'block';
+                document.getElementById('fuby').style.display = 'block';">
+                                    <button type="submit" id="submitform" class="btn btn-primary" Style="height: 30px; width: 220px; display: inline; margin-left: 10px; border-radius: 5px; display: block; margin-top: 15px; "><span style="font-family: 'Raleway', sans-serif;">Next</span></button>
+                                </a>
+                                    
+                                </div>
+                                
+                                
+                                
+                          <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><p style="font-family: Georgia; font-size: 20px; font-family: 'Raleway', sans-serif; color: gray;margin-top: 20px;  margin-left: 0px;">Close</p></a>
+                                
+                                
+                                
+                            </section>
+                            
+                                
+                                  
+                            
+                        </form>
+                    </div>
+        </section>
+    </div>
+    {{>secondLightbox}}
+    {{>thirdLightbox}}<!-- First lightbox ends here -->
+</template>
+
+<template name="secondLightbox">
+    
+                            
+                            <!-- Second lightbox starts here -->
+                            <div id="faby" class="white_content">
+                                
+                                <p style="margin-left: 50px; margin-bottom: 40px; font-family: 'Raleway', sans-serif; font-size: 30px;">Nice Photo
+                                </p>
+                                
+                                <p style="font-family: 'Raleway', sans-serif; color: black; font-weight: bold; margin-left: 10px;">Please upload Vertical/Portrait images only. <br> Horizontal or Landsacpe images do not display nicely.</p>
+                                        <section id="popup">
+                                            <div class="container">
+                                                {{#if imageupload}}<p style="font-family: 'Raleway', sans-serif; color: red; font-weight: bold; margin-left: 10px;">You have successfully uploaded <br>the product!</p>
+                                                {{else}}
+                                                    <div style="display: block; margin-bottom: 20px;">{{>tester}}</div>                                 {{/if}}
+                                                    
+                                                
+                                            </div>
+                                        </section>
+
+
+                               
+                            
+                            <a href="javascript:void(0)" onclick="document.getElementById('faby').style.display='none';document.getElementById('fuby').style.display='none'"><p style=" font-size: 20px; font-family: 'Raleway', sans-serif; color: gray;margin-top: 20px;  margin-left: 25px;" href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</p></a>
+                                
+                            </div>
+                            
+
+                <!-- Second lightbox ends here -->
+</template>
+
+<template name="product">
+    <!-- SERVER STATUS PANELS -->
+    <div class="col-md-4 col-sm-4 mb">
+<div class="white-panel pn">
+            <div class="white-header" style="margin-bottom: -5px; height: 50px;">
+                <h5 style="color: black; margin-top: 0px;">
+                
+                {{#if ifsold}} <span style="color: red; font-weight: bold;">SOLD OUT!</span> {{else}} <b>{{productName}}</b> {{/if}}
+                </h5>
+                </div>
+            
+            <div class="row">
+                
+                
+                
+                
+                <div class="col-sm-6 col-xs-6"></div>
+            </div>
+            <div class="centered" >
+                
+                <a href="#" align="center" class="tooltip1" data-tip="{{productDescription}}"><img id="pix" width="100%" height="375" style="margin-top: -300px; cursor: default; display:inline-block;
+    margin:auto;" src="{{c.url image.public_id format=format}}"></a>
+            </div>
+    
+    
+    
+                
+            
+            <div class="row" style="padding-bottom: 10px ! important;">
+                <div class="col-sm-4 col-xs-4 goleft" style="margin-top: 10px;">
+                    <p><i class="fa fa-usd" style="font-size: 20px;">{{productPrice}}</i> </p>
+                </div>
+    
+    
+    
+                <div class="col-sm-4 col-xs-4 " style="margin-top: 10px;">
+                {{#if ifsold}}  
+                
+                    {{else}} <a  href="javascript:void(0)" onclick="document.getElementById('light1').style.display='block';document.getElementById('fade1').style.display='block'"><button class="btn-primary2" id="mulan" style="margin-top: -3px;">Buy</button> </a>            {{/if}}
+                </div>
+                <div class="col-sm-4 col-xs-4 goright" style="margin-top: 3px;">
+                    
+                        {{>clickHeart}}
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /col-md-4-->
+
+</template> 
+
+<template name="wish">
+    <!-- First Action -->
+    
+    <div class="desc" style="padding-bottom: 20px;">
+        <div class="thumb">
+            
+        </div>
+        <div class="details1">
+            
+            <p style="margin-left: 20px; margin-right: 0px; 
+                      height: auto; margin-top: -20px; width: 110%; word-wrap: break-word ! important;">
+
+                <br/>
+                <a  href="javascript:void(0)" onclick="document.getElementById('light1').style.display='block';document.getElementById('fade1').style.display='block'" style="text-decoration: none; font-family: 'Raleway', sans-serif; "><button class="btn-primary1 mulanhua">Sell</button></a> <span >to {{username}} :</span>
+                
+                  <span style="font-size: 12px; line-height: 2px; font-family: 'Raleway', sans-serif; width: 150% ! important; margin-left: 0px; ">&nbsp;{{wish}}</span> 
+                
+                
+            </p>
+            
+        </div>
+        
+    </div>
+    
+    <!-- First end Action -->
+</template>
+
+<template name="wishlist">
+    <!--COMPLETED ACTIONS DONUTS CHART-->
+    <h3><b>All The Things I Need</b></h3>
+    <form>
+        <div class="form-group">
+            <textarea type="text" Style="height: 80px; width: 100%; display: inline; margin-left: 0px; margin-top: 10px; margin-right: -10px; margin-bottom: 5px;" class="form-control wishcontent" id="set5" placeholder="Haven't found what you need yet? Write something like 'I need an iphone to buy'.Prospective sellers will contact you." ></textarea>
+        </div>
+
+
+        {{>postToWishlist}}
+    </form>
+</template>
+
+
+<template name="topNavbar">
+    <header class="header black-bg" id="scroll1">
+  <div class="navbar navbar-inverse navbar-fixed-top" style="position: absolute;" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top: -5px;">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+        <img src="dog.png" alt="logo" style="display: inline;width:40px;height:40px; margin-bottom: 0px; margin-top: -5px; margin-left: 10px;">
+        
+        
+      <a href="{{pathFor 'home'}}" class="logo" id="set1" style="margin-left:10px; color: #fed136; font-size: 30px; margin-top: 0px;"><b>CollegePuppy</b></a>
+        
+        
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <!--notifications-->
+          
+          
+          
+          
+          <li class="dropdown" style="Height: 100%; width: auto; margin-top: 0px; margin-left: 10px;">                    
+                
+              
+              
+                   
+                            <a  href="{{pathFor 'home'}}" class="backtohome settozero" id="dLabel" role="button" data-toggle="dropdown" style="font-family: 'Raleway', sans-serif; background: #505050 ! important; color: white ! important; border-style: solid ! important; border-color: transparent ! important; border-width: 1px; border-radius: 3px; padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: 10px;" data-target="#" >
+                                
+                                Home
+                       
+              
+              
+              </a>
+          
+          </li>
+          
+          
+          <li class="dropdown" style="Height: auto; width: auto; margin-left: 10px;">
+            <a id="dLabel" role="button" data-toggle="dropdown" style="font-family: 'Raleway', sans-serif; background: #505050 ! important; border-style: solid ! important; color: white ! important; ;border-color: transparent ! important; border-width: 1px; border-radius: 3px; padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: 10px; " data-target="#" href="#">
+               Categories
+            </a>
+    		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" style="max-height:400px; overflow:auto;">
+              <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; " href="/freegiving">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free Giving</a></li>
+              
+              <li class="dropdown">
+                <ul style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: default;" tabindex="-1" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Books</ul>
+                <li class="dropdown-menu">
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" tabindex="-1" href="/books/textbooks">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Textbooks</a></li>
+                 
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/books/novels">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Novels</a></li>
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; " href="/books/others">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</a></li>
+                </li>
+              </li>
+                
+                
+                <li class="dropdown">
+                <ul style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: default;" tabindex="-1" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Electronics</ul>
+                <li class="dropdown" style="width: auto;">
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; " tabindex="-1" href="/electronics/phone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phones and Accessories</a></li>
+                 
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/electronics/desktop">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Desktops and Accessories</a></li>
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; " href="/electronics/laptop">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Laptops, Tablets and Accessories</a></li>
+                    <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/electronics/gaming">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gaming Devices and Video Games</a></li>
+                    <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/electronics/tv">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV and Videos</a></li>
+                    <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/electronics/cameras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cameras</a></li>
+                    <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/electronics/headphones">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Headphones</a></li>
+                    <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; " href="/electronics/others">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other</a></li>
+                </li>
+              </li>
+                
+               
+                
+                <li class="dropdown">
+                <ul style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: default;" tabindex="-1" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apparel&Shoes</ul>
+                <li class="dropdown-menu" style="height: auto ! important;">
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" tabindex="-1" href="/apparel/men">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Men's</a></li>
+                 
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important;" href="/apparel/women">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Women's</a></li>
+                  <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; " href="/apparel/unisex">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unisex</a></li>
+                </li>
+              </li>
+                
+                
+                <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; " href="/dormsupplies">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dorm Miscellaneous</a></li>
+                <li><a class="settozero" style="color: black ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; cursor: pointer; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: grey; "  href="/sportsequipment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sports Equipment</a></li>
+                
+                
+            </ul>
+            </li>
+          
+          
+          
+          <li class="dropdown" style="Height: 100%; width: auto; margin-top: 0px; margin-left: 10px;">                    
+                
+              
+              
+                   
+                            <a id="dLabel" role="button" class="sellanitem" data-toggle="dropdown" style="font-family: 'Raleway', sans-serif; background: #505050 ! important; color: white ! important; border-style: solid ! important; border-color: transparent ! important; border-width: 1px; border-radius: 3px; padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: 10px;" data-target="#" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+                                
+                                Sell
+                       
+              
+              
+              </a>
+          
+          </li>
+          {{>searchButton}}
+                        
+          <li class="dropdown" style="Height: auto; width: auto; margin-left: 10px;">
+            <a id="dLabel" role="button" data-toggle="dropdown" style="font-family: 'Raleway', sans-serif; background: #505050 ! important; border-style: solid ! important; color: white ! important; border-color: transparent ! important; border-width: 1px; border-radius: 3px; padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: 10px;" data-target="#" href="/page.html">
+               Me
+            </a>
+          
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+          
+          <li><a style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: pointer;" href="{{pathFor 'myposteditems'}}">My Posted Items</a></li>
+              <li><a style="color: #006699 ! important ; padding-top: 10px ! important; padding-bottom: 10px ! important; font-size: 20px; cursor: pointer;" id="wishlistpage" href="{{pathFor 'mywishlist'}}">My Wishlist</a></li>
+              {{>logout}}
+              
+              </ul>
+          </li>
+          
+          
+          <!-- end of notifications-->
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+         </header>
+    
+</template>
+
+<template name="searchButton">
+    
+   <li class="dropdown" style="Height: auto; width: auto; margin-left: 10px;">
+            <a class="searchButton" id="dLabel"  data-toggle="dropdown" style="font-family: 'Raleway', sans-serif; background: #505050 ! important; border-style: solid ! important; color: white ! important; border-color: transparent ! important; border-width: 1px; border-radius: 3px; padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: 10px;" data-target="#" href="{{pathFor 'search'}}">
+               Search
+            </a>
+       </li>
+</template>
+
+
+
+
+<template name="sidebar">
+    
+        <!-- sidebar menu start-->
+        <div id="sidebar" class="col-xs-3 col-xs-3">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+
+
+            <h5 class="centered" style="font-family: 'Raleway', sans-serif; text-align: center; white-space: wrap; font-size: 20px;">{{username}}</h5>
+
+            <li class="mt">
+                <a style="background: #f2f2f2;" href="{{pathFor 'home'}}">
+                    <i style="color: black;" class="fa fa-dashboard"></i>
+                    <span style="color: black;">Latest</span>
+                </a>
+            </li>
+
+
+            <ul style="margin-top: 5px; margin-left: 0px;" class="mt" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu" >
+                    <a style="background: #f2f2f2;"  tabindex="-1" href="#"> <i style="color: black;" class="fa fa-camera-retro"></i><span  style="color: black;">Electronics</span></a>
+                    <ul class="dropdown-menu">
+                        <li style="margin-top:-10px;"><a tabindex="-1" href="{{pathFor 'phone'}}"><span style=" color: black;">Phones and Accessories</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'desktop'}}"><span style=" color: black;">Desktops and Monitors</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'laptop'}}"><span style=" color: black;">Laptops and Tablets</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'gaming'}}"><span style=" color: black;">Gaming</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'tv'}}"><span style=" color: black;">TV and Videos</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'cameras'}}"><span style=" color: black;">Cameras</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'headphones'}}"><span style=" color: black;">Headphones</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'electronicsothers'}}"><span style=" color: black;">Others</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul style="margin-top: 5px; margin-left: 0px;" class="mt" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                    <a style="background: #f2f2f2;" tabindex="-1" href="#"> <i style="color: black;" class="fa fa-book"></i><span style="color: black;">Books</span></a>
+                    <ul class="dropdown-menu" style="position: absolute; z-index: 1;">
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'textbooks'}}"><span style=" color: black;">Textbooks</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'novels'}}"><span style=" color: black;">Novels</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="
+                            {{pathFor 'booksothers'}}"><span style=" color: black;">Others</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul style="margin-top: 5px; margin-left: 0px;" class="mt" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                    <a style="background: #f2f2f2;" tabindex="-1" href="#"><i style="color: black;" class="fa fa-umbrella"></i><span style="color: black;">Apparel&Shoes</span></a>
+                    <ul class="dropdown-menu" style="position: absolute; z-index: 1;">
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'men'}}"><span style=" color: black;">Men's</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'women'}}"><span style=" color: black;">Women's</span></a>
+                        </li>
+                        <li style="margin-top:-10px"><a tabindex="-1" href="{{pathFor 'unisex'}}"><span style=" color: black;">Unisex</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <li class="mt" style="margin-top: 5px;">
+                <a style="background: #f2f2f2;" href="{{pathFor 'dormsupplies'}}">
+                    <i style="color: black;" class="fa fa-lock"></i>
+                    <span style="color: black;">Dorm Supplies</span>
+                </a>
+            </li>
+
+            <li class="mt" style="margin-top: 5px;">
+                <a style="background: #f2f2f2;" href="{{pathFor 'sportsequipment'}}">
+                    <i style="color: black;" class="fa fa-life-ring"></i>
+                    <span style="color: black;">Sports Equipment</span>
+                </a>
+            </li>
+
+
+
+            <li class="mt" style="margin-top: 5px;">
+                <a style="background: #f2f2f2;" href="{{pathFor 'freegiving'}}">
+                    <i style="color: black;" class="fa fa-beer"></i>
+                    <span style="color: black;">Free Giving</span>
+                </a>
+            </li>
+
+
+           
+            
+            
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+        <!-- sidebar menu end-->
+    
+</template>
+
+
+<template name="postToWishlist">
+    <a type="button" value="Reload Page" >
+    <button  type="submit" align="center" style="height: 30px; width: 100%; display: inline; text-decoration: none ! important; backgroung: #fed136;  margin-top: -20px; margin-left: auto; margin-right: auto; margin-bottom: 20px; " class="btn btn-default1"><span style="text-decoration: none; font-weight: bold;">submit</span>
+    </button>
+    </a>
+    {{> Template.dynamic template = wishIsWrong }}
+</template>
+
+
+
+<template name="thirdLightbox">
+
+    <!-- Third lightbox starts here -->
+    <div id="light1" class="white_content">
+        {{#if submitemail}}
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 30px; margin-left: 30px; color: red;"><b>You have successfully submitted the email! Expect an email in your inbox, from the {{#if ifClickWishlist}} buyer {{else}} seller {{/if}}.</b></p>
+            <a class="two" href="javascript:void(0)" onclick="document.getElementById('light1').style.display='none';document.getElementById('fade1').style.display='none'" style="font-family: 'Raleway', sans-serif;  font-size: 20px; color: gray; margin-top: -30px; margin-left:0px;">
+                        
+                            <br>
+                            <p style="margin-left: 25px; cursor: pointer;">Close</p>
+                        
+                    </a>
+        
+        {{else}}
+        
+        <p align="center" style="margin-left: 15px; font-family: 'Raleway', sans-serif;  margin-bottom: 10px; line-height: 100%; font-size: 20px; ">
+            {{#if ifClickWishlist}} Tell them you have the product. {{else}} Tell them you want the product. {{/if}}
+            
+        </p>
+        <p> {{#if ifClickWishlist}} <span style="color: blue; margin-left: 15px; font-size: 15px;"> This email will go to the buyer: {{sellerName}} </span> {{else}} <span style="color: blue; margin-left: 15px; font-size: 15px;">This email will go to the seller: {{sellerName}} </span> {{/if}}</p>
+        <section id="popup">
+            <div class="container">
+
+                <form role="form">
+
+                    <div class="form-group">
+
+                        <input type="text" class="form-control emailsubject" Style="height: 30px; width: 250px; display: inline; margin-left: -10px; margin-top: 0px;" id="set4" placeholder="email subject">
+                    </div>
+                    {{#if emailSubject}} <p style="color: red;">The email subject cannot be empty!</p>{{/if}}
+
+                    <div class="form-group">
+                        <textarea type="text" Style="height: 60px; width: 250px; display: inline; margin-left: -10px;" class="form-control emailcontent" id="set5" placeholder="email body"></textarea>
+                    </div>
+                    {{#if emailContent}} <p style="color: red;">The email content cannot be empty!</p>{{/if}}
+
+                    <div class="form-group">
+                        
+                    <button type="submit" class="btn btn-primary submitemail" Style="height: 30px; width: 250px; display: inline; margin-left: -10px; border-radius: 5px; display: block; margin-top: 5px; ">Submit email</button>
+                       
+                    </div>
+
+                    <a class="two" href="javascript:void(0)" onclick="document.getElementById('light1').style.display='none';document.getElementById('fade1').style.display='none'">
+                        
+                            <br>
+                            <p style="font-family: 'Raleway', sans-serif;  font-size: 20px; color: gray; margin-top: -30px; margin-left: 0px; cursor: pointer;">Close</p>
+                        
+                    </a>
+
+                </form>
+            </div>
+        </section>
+        {{/if}}
+    </div>
+    <!-- Third lightbox ends here -->
+</template>
+<template name="clickHeart">
+    {{#if clickHeart}}
+    
+    <p><span style="cursor:pointer"><i style="margin-right: 15px; margin-bottom: 5px; color: red; font-size: 30px;"  class="glyphicon glyphicon-heart" id="removefromwishlist"></i> </span></p> 
+    
+    {{else}}
+    
+    <p><span style="cursor:pointer"><i style="margin-right: 15px; margin-bottom: 5px; color: red; font-size: 30px;"  class="glyphicon glyphicon-heart-empty" id="addtowishlist"></i> </span></p> 
+    
+    {{/if}}
+     
+    
+</template>
+
+<template name="wishOK"></template>
+<template name="wishEmpty"><p align="center" style="color: red;">The content cannot be empty!</p></template>
+<template name="wishShort"><p align="center" style="color: red;">The content cannot be too short!</p></template>
+<template name="wishLong"><p align="center" style="color: red;">The content cannot be too long!</p></template>
+<template name="images">
+    {{> pages}}
+  {{> pagesNav}}
+</template>
+
+
+<template name="fourLightbox">
+
+    <!-- Third lightbox starts here -->
+    <div id="light2" class="white_content">
+        {{#if submitemail}}
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 30px; margin-left: 30px; color: red;"><b>The email has been received. Your suggestion will be considered. We will get back to you soon.</b></p>
+            <a class="two" href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade1').style.display='none'" style="font-family: 'Raleway', sans-serif;  font-size: 20px; color: gray; margin-top: -30px; margin-left:0px;">
+                        
+                            <br>
+                            <p style="margin-left: 25px; cursor: pointer;">Close</p>
+                        
+                    </a>
+        
+        {{else}}
+        
+        <p align="center" style="margin-left: 15px; font-family: 'Raleway', sans-serif;  margin-bottom: 10px; line-height: 100%; font-size: 20px; ">
+           Wanna contact us/give us feedback? <br>Say something!
+            
+        </p>
+        <br>
+        <section id="popup">
+            <div class="container">
+
+                <form role="form">
+
+                    <div class="form-group">
+
+                        <input type="text" class="form-control emailsubject" Style="height: 30px; width: 250px; display: inline; margin-left: -10px; margin-top: 0px;" id="set4" placeholder="email subject">
+                    </div>
+                    {{#if emailSubject}} <p style="color: red;">The email subject cannot be empty!</p>{{/if}}
+
+                    <div class="form-group">
+                        <textarea type="text" Style="height: 60px; width: 250px; display: inline; margin-left: -10px;" class="form-control emailcontent" id="set5" placeholder="email body"></textarea>
+                    </div>
+                    {{#if emailContent}} <p style="color: red;">The email content cannot be empty!</p>{{/if}}
+
+                    <div class="form-group">
+                        
+                    <button type="submit" class="btn btn-primary submitemail" Style="height: 30px; width: 250px; display: inline; margin-left: -10px; border-radius: 5px; display: block; margin-top: 5px; ">Submit email</button>
+                       
+                    </div>
+
+                    <a class="two" href="javascript:void(0)" onclick="document.getElementById('light2').style.display='none';document.getElementById('fade1').style.display='none'">
+                        
+                            <br>
+                            <p style="font-family: 'Raleway', sans-serif;  font-size: 20px; color: gray; margin-top: -30px; margin-left: 0px; cursor: pointer;">Close</p>
+                        
+                    </a>
+
+                </form>
+            </div>
+        </section>
+        {{/if}}
+    </div>
+    <!-- Third lightbox ends here -->
+</template>
+
+<template name="footer">
+    <footer class="site-footer">
+            <div class="text-center" style="margin-top: -5px; margin-bottom: -5px;">
+                <span style="color: black;">2015 <p style="display: inline; font-size: 20px; margin-left: 10px; margin-right: 10px; ">&bull;</p> &copy;  CollegePuppy. </span> 
+                <p style="display: inline; font-size: 20px; color: black; margin-left: 10px; margin-right: 10px;">&bull;</p>
+                <a href="javascript:void(0)" onclick="document.getElementById('light2').style.display='block';document.getElementById('fade1').style.display='block'" style="text-decoration:underline; color:black;" >feedback</a>
+                
+            
+            </div>
+        </footer>
+    
+    
+</template>

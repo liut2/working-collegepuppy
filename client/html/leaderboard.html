@@ -1,0 +1,94 @@
+<template name="leaderboards">
+    <div class="search-input"  align="center" >
+        {{> esInput index="images" id="search"  class="search1" placeholder="      Search an item..." convertnumber=true }}
+    </div>
+
+    <div class="margin-box" align="center" style="margin-bottom: 30px;">
+        
+        
+        <span style="font-family: Georgia; font-size: 20px;">Sorted by </span>
+        <select class="sort-select">
+            <option data-sort="latest-post">latest-post</option>
+            <option data-sort="lowest-price">lowest price</option>
+            
+        </select>
+    </div>
+
+    {{#ifEsIsSearching index="images" id="search" logic="OR" }}
+        <div>Searching...</div>
+    {{/ifEsIsSearching}}
+
+    <div class="leaderboard" align="center" style="font-family: georgia; font-size: 17px; margin-bottom: 500px;">
+        {{#ifEsInputIsEmpty index="images" id="search" }}
+            <div class="please-search">There are {{allDocs}} items in your community to search from </div>
+        {{else}}
+            
+        {{/ifEsInputIsEmpty}}
+
+        {{#esEach index="images" id="search"}}
+            {{#if ifnotsold}} {{>mySearchProduct}} {{else}}  {{/if}}
+            
+        {{/esEach}}
+
+        {{#ifEsHasNoResults index="images" id="search" logic="OR" }}
+            <div class="no-results">No results found!</div>
+        {{/ifEsHasNoResults}}
+
+        {{! > esLoadMoreButton index="images" id="search"}}
+        {{> esPagination index="images" id="search"  }}
+    </div>
+</template>
+
+
+<template name="mySearchProduct">
+    <!-- SERVER STATUS PANELS -->
+    <div class="col-md-4 col-sm-4 mb">
+<div class="white-panel pn">
+            <div class="white-header" style="margin-bottom: -5px; height: 50px;">
+                <h5 style="color: black; margin-top: 0px;">
+                
+                {{#if ifsold}} <span style="color: red; font-weight: bold;">SOLD OUT!</span> {{else}} <b>{{productName}}</b> {{/if}}
+                </h5>
+                </div>
+            
+            <div class="row">
+                
+                
+                
+                
+                <div class="col-sm-6 col-xs-6"></div>
+            </div>
+            <div class="centered" >
+                
+                <a href="#" align="center" class="tooltip1" data-tip="{{productDescription}}"><img id="pix" width="100%" height="375" style="margin-top: -300px; cursor: default; display:inline-block;
+    margin:auto;" src="{{c.url image.public_id format=format}}"></a>
+            </div>
+    
+    
+    
+                
+            
+            <div class="row" style="padding-bottom: 10px ! important;">
+                <div class="col-sm-4 col-xs-4 goleft" style="margin-top: 10px;">
+                    <p><i class="fa fa-usd" style="font-size: 20px;">{{productPrice}}</i> </p>
+                </div>
+    
+    
+    
+                <div class="col-sm-4 col-xs-4 " style="margin-top: 10px;">
+                {{#if ifsold}}  
+                
+                    {{else}} <a  href="javascript:void(0)" onclick="document.getElementById('light1').style.display='block';document.getElementById('fade1').style.display='block'"><button class="btn-primary2" id="mulan" style="margin-top: -3px; font-family: 'Raleway', sans-serif; font-size:10px;">Buy</button> </a>            {{/if}}
+                </div>
+                <div class="col-sm-4 col-xs-4 goright" style="margin-top: 3px;">
+                    {{>clickHeart}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /col-md-4-->
+
+</template>
+
+
+

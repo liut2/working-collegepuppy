@@ -1,0 +1,12 @@
+.search1 {
+    width: 70%;
+    height: 50px;
+    font-family: georgia; 
+    font-size: 20px;
+    border-radius: 10px;
+    
+    margin-bottom: 30px;
+}
+
+.search1:focus {
+    outline: 0; }
